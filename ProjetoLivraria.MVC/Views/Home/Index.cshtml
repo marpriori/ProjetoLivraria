@@ -2,30 +2,224 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<!-- top tiles -->
+<div class="row tile_count">
+    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+        <span class="count_top"><i class="fa fa-book"></i> Total livro(s)</span>
+        <div class="count">50</div>
+        <span class="count_bottom"><i class="green">4% </i> na última semana</span>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+        <span class="count_top"><i class="fa fa-user"></i> Total autor(es)</span>
+        <div class="count">5</div>
+        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> na última semana</span>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+        <span class="count_top"><i class="fa fa-building"></i> Total editora(s)</span>
+        <div class="count green">26</div>
+        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> na última semana</span>
+    </div>
 </div>
+<!-- /top tiles -->
+
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+
+
+    <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="x_panel tile fixed_height_320">
+            <div class="x_title">
+                <h2>Ano</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <h4>Quantidade de livro por ano</h4>
+                <div class="widget_summary">
+                    <div class="w_left w_25">
+                        <span>2017</span>
+                    </div>
+                    <div class="w_center w_55">
+                        <div class="progress">
+                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 66%;">
+                                <span class="sr-only">60% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w_right w_20">
+                        <span>15</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="widget_summary">
+                    <div class="w_left w_25">
+                        <span>2016</span>
+                    </div>
+                    <div class="w_center w_55">
+                        <div class="progress">
+                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
+                                <span class="sr-only">60% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w_right w_20">
+                        <span>5</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="widget_summary">
+                    <div class="w_left w_25">
+                        <span>2015</span>
+                    </div>
+                    <div class="w_center w_55">
+                        <div class="progress">
+                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+                                <span class="sr-only">60% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w_right w_20">
+                        <span>12</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="widget_summary">
+                    <div class="w_left w_25">
+                        <span>2014</span>
+                    </div>
+                    <div class="w_center w_55">
+                        <div class="progress">
+                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 5%;">
+                                <span class="sr-only">60% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w_right w_20">
+                        <span>5</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="widget_summary">
+                    <div class="w_left w_25">
+                        <span>2013 -</span>
+                    </div>
+                    <div class="w_center w_55">
+                        <div class="progress">
+                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
+                                <span class="sr-only">60% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w_right w_20">
+                        <span>13</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="x_panel tile fixed_height_320 overflow_hidden">
+            <div class="x_title">
+                <h2>Principais autores</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <table class="" style="width:100%">
+                    <tr>
+                        <th style="width:37%;">
+                            <p>Top 5</p>
+                        </th>
+                        <th>
+                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                                <p class="">Autor</p>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                <p class="">Quantidade</p>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <canvas class="canvasDoughnut" height="140" width="140" style="margin: 15px 10px 10px 0"></canvas>
+                        </td>
+                        <td>
+                            <table class="tile_info">
+                                <tr>
+                                    <td>
+                                        <p><i class="fa fa-square blue"></i>Mario </p>
+                                    </td>
+                                    <td>60%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><i class="fa fa-square green"></i>Jorge </p>
+                                    </td>
+                                    <td>10%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><i class="fa fa-square purple"></i>JK </p>
+                                    </td>
+                                    <td>20%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><i class="fa fa-square aero"></i>Silvia </p>
+                                    </td>
+                                    <td>15%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><i class="fa fa-square red"></i>Others </p>
+                                    </td>
+                                    <td>30%</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+    <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Últimos livros cadastrados</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="dashboard-widget-content">
+                    <ul class="list-unstyled timeline widget">
+                        <li>
+                            <div class="block">
+                                <div class="block_content">
+                                    <h2 class="title"><a>Como fazer amigos e influenciar pessoas</a></h2>
+                                    <p class="excerpt">Jorge da Silva</p>
+                                    <div class="byline">
+                                        <span>1 hora(s) atrás</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="block">
+                                <div class="block_content">
+                                    <h2 class="title"><a>Como fazer amigos e influenciar pessoas</a></h2>
+                                    <p class="excerpt">Jorge da Silva</p>
+                                    <div class="byline">
+                                        <span>1 hora(s) atrás</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
+
 </div>

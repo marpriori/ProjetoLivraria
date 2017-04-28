@@ -26,6 +26,42 @@ namespace ProjetoLivraria.MVC
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Gentelella/css").Include(
+                "~/Gentelella/vendors/bootstrap/dist/css/bootstrap.min.css",
+                "~/Gentelella/vendors/font-awesome/css/font-awesome.min.css",
+                "~/Gentelella/vendors/nprogress/nprogress.css",
+                "~/Gentelella/vendors/iCheck/skins/flat/green.css",
+                "~/Gentelella/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css",
+                "~/Gentelella/vendors/jqvmap/dist/jqvmap.min.css",
+                "~/Gentelella/vendors/bootstrap-daterangepicker/daterangepicker.css",
+                "~/Gentelella/build/css/custom.css"));
+
+            bundles.Add(new ScriptBundle("~/Gentelella/scripts").Include(
+                "~/Gentelella/vendors/jquery/dist/jquery.min.js",
+                "~/Gentelella/vendors/bootstrap/dist/js/bootstrap.min.js",
+                "~/Gentelella/vendors/fastclick/lib/fastclick.js",
+                "~/Gentelella/vendors/nprogress/nprogress.js",
+                "~/Gentelella/vendors/Chart.js/dist/Chart.min.js",
+                "~/Gentelella/vendors/gauge.js/dist/gauge.min.js",
+                "~/Gentelella/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js",
+                "~/Gentelella/vendors/iCheck/icheck.min.js",
+                "~/Gentelella/vendors/skycons/skycons.js",
+                "~/Gentelella/vendors/Flot/jquery.flot.js",
+                "~/Gentelella/vendors/Flot/jquery.flot.pie.js",
+                "~/Gentelella/vendors/Flot/jquery.flot.time.js",
+                "~/Gentelella/vendors/Flot/jquery.flot.stack.js",
+                "~/Gentelella/vendors/Flot/jquery.flot.resize.js",
+                "~/Gentelella/vendors/flot.orderbars/js/jquery.flot.orderBars.js",
+                "~/Gentelella/vendors/flot-spline/js/jquery.flot.spline.min.js",
+                "~/Gentelella/vendors/flot.curvedlines/curvedLines.js",
+                "~/Gentelella/vendors/DateJS/build/date.js",
+                "~/Gentelella/vendors/jqvmap/dist/jquery.vmap.js",
+                "~/Gentelella/vendors/jqvmap/dist/maps/jquery.vmap.world.js",
+                "~/Gentelella/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js",
+                "~/Gentelella/vendors/moment/min/moment.min.js",
+                "~/Gentelella/vendors/bootstrap-daterangepicker/daterangepicker.js",
+                "~/Gentelella/build/js/custom.js"));
         }
     }
 }

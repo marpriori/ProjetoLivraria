@@ -30,9 +30,9 @@ namespace ProjetoLivraria.MVC.Controllers
         public ActionResult Details(int id)
         {
             var autor = _autorService.GetById(id);
-            var clienteViewModel = Mapper.Map<Autor, AutorViewModel>(autor);
+            var autorViewModel = Mapper.Map<Autor, AutorViewModel>(autor);
 
-            return View(clienteViewModel);
+            return View(autorViewModel);
         }
 
         // GET: Autores/Create

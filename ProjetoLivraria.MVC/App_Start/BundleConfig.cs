@@ -29,13 +29,13 @@ namespace ProjetoLivraria.MVC
 
             bundles.Add(new StyleBundle("~/Gentelella/css").Include(
                 "~/Gentelella/vendors/bootstrap/dist/css/bootstrap.min.css",
-                "~/Gentelella/vendors/font-awesome/css/font-awesome.min.css",
                 "~/Gentelella/vendors/nprogress/nprogress.css",
                 "~/Gentelella/vendors/iCheck/skins/flat/green.css",
                 "~/Gentelella/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css",
                 "~/Gentelella/vendors/jqvmap/dist/jqvmap.min.css",
                 "~/Gentelella/vendors/bootstrap-daterangepicker/daterangepicker.css",
-                "~/Gentelella/build/css/custom.css"));
+                "~/Gentelella/build/css/custom.css",
+                "~/Content/font-awesome.css"));
 
             bundles.Add(new ScriptBundle("~/Gentelella/scripts").Include(
                 "~/Gentelella/vendors/jquery/dist/jquery.min.js",

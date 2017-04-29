@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ProjetoLivraria.MVC.ViewModels.LivroViewModel>
+@using ProjetoLivraria.MVC.Gentelella.Helpers
+
+<div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Últimos livros cadastrados</h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div class="dashboard-widget-content">
+                <ul class="list-unstyled timeline widget">
+                    @foreach (var livro in Model)
+                    {
+                        <li>
+                            <div class="block">
+                                <div class="block_content">
+                                    <h2 class="title"><a>@livro.Titulo</a></h2>
+                                    <p class="excerpt">@livro.Autor.Nome</p>
+                                    <div class="byline">
+                                        <span>@Html.CarregarMensagemTempoPassado(livro.DataCadastro)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -6,6 +6,5 @@ namespace ProjetoLivraria.Business.Interfaces.Repository
 {
     public interface ILivroRepository : IRepositoryBase<Livro>
     {
-        IEnumerable<Livro> BuscarUltimosLivrosCadastrados(int quantidade);
     }
 }

@@ -1,57 +1,18 @@
 ﻿@model ProjetoLivraria.MVC.ViewModels.HomeViewModel
-@using ProjetoLivraria.MVC.Gentelella.Helpers
 
 @{
     ViewBag.Title = "Dashboard";
 }
-
 <div class="row tile_count">
-    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-        <span class="count_top"><i class="fa fa-book"></i> Total livro(s)</span>
-        <div class="count">@Model.QuantidadeLivro</div>
-    </div>
-    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-        <span class="count_top"><i class="fa fa-user"></i> Total autor(es)</span>
-        <div class="count">@Model.QuantidadeAutor</div>
-    </div>
-    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-        <span class="count_top"><i class="fa fa-building"></i> Total editora(s)</span>
-        <div class="count">@Model.QuantidadeEditora</div>
-    </div>
-</div>
 
+    @Html.Partial("IndexQuantidadeRegistrosPartial", Model)
+
+</div>
 <div class="row">
 
     @Html.Partial("IndexPrincipaisAutoresPartial", Model)
 
-    <div class="col-md-6 col-sm-6 col-xs-12">
-        <div class="x_panel">
-            <div class="x_title">
-                <h2>Últimos livros cadastrados</h2>
-                <div class="clearfix"></div>
-            </div>
-            <div class="x_content">
-                <div class="dashboard-widget-content">
-                    <ul class="list-unstyled timeline widget">
-                        @foreach (var livro in Model.UltimosLivros)
-                        {
-                            <li>
-                                <div class="block">
-                                    <div class="block_content">
-                                        <h2 class="title"><a>@livro.Titulo</a></h2>
-                                        <p class="excerpt">@livro.Autor.Nome</p>
-                                        <div class="byline">
-                                            <span>@Html.CarregarMensagemTempoPassado(livro.DataCadastro)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        }
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    @Html.Partial("IndexUltimosLivrosCadastradosPartial", Model.UltimosLivros)
 
 </div>
 

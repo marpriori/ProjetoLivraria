@@ -26,12 +26,12 @@ namespace ProjetoLivraria.MVC.Controllers
         public ActionResult Index()
         {
             var model = new HomeViewModel();
-            model.QuantidadeLivro = _livroService.GetAll().Count();
+            var todosLivros = _livroService.GetAll();
+            model.QuantidadeLivro = todosLivros.Count();
             model.QuantidadeAutor = _autorService.GetAll().Count();
             model.QuantidadeEditora = _editoraService.GetAll().Count();
-
-            var livros = _livroService.BuscarUltimosLivrosCadastrados(3);
-            model.UltimosLivros = Mapper.Map<IEnumerable<Livro>, IEnumerable<LivroViewModel>>(livros);
+            
+            model.UltimosLivros = Mapper.Map<IEnumerable<Livro>, IEnumerable<LivroViewModel>>(todosLivros.OrderByDescending(l => l.DataCadastro).Take(3));
 
             var autores = _autorService.ListarPrincipais();
             model.PrincipaisAutores = Mapper.Map<IDictionary<Autor, int>, IDictionary<AutorViewModel, int>>(autores);

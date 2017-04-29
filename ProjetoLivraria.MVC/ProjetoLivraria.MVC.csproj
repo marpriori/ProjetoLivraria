@@ -256,6 +256,8 @@
     <Content Include="Views\Livros\Details.cshtml" />
     <Content Include="Views\Livros\Delete.cshtml" />
     <Content Include="Views\Home\IndexPrincipaisAutoresPartial.cshtml" />
+    <Content Include="Views\Home\IndexUltimosLivrosCadastradosPartial.cshtml" />
+    <Content Include="Views\Home\IndexQuantidadeRegistrosPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

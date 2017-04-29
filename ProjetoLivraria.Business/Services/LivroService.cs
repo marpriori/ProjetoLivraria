@@ -14,10 +14,5 @@ namespace ProjetoLivraria.Business.Services
         {
             _livroRepository = livroRepository;
         }
-
-        public IEnumerable<Livro> BuscarUltimosLivrosCadastrados(int quantidade)
-        {
-            return _livroRepository.BuscarUltimosLivrosCadastrados(quantidade);
-        }
     }
 }

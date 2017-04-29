@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @*@Styles.Render("~/Content/css")*@
+    <title>@ViewBag.Title - Projeto livraria</title>
     @Scripts.Render("~/bundles/modernizr")
     @Styles.Render("~/Gentelella/css")
 </head>
@@ -21,7 +20,6 @@
 
                     <div class="clearfix"></div>
 
-                    <!-- sidebar menu -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <ul class="nav side-menu">
@@ -32,12 +30,10 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- /sidebar menu -->
 
                 </div>
             </div>
 
-            <!-- top navigation -->
             <div class="top_nav">
                 <div class="nav_menu">
                     <nav>
@@ -47,21 +43,15 @@
                     </nav>
                 </div>
             </div>
-            <!-- /top navigation -->
-            <!-- page content -->
             <div class="right_col" role="main">
                 @RenderBody()
             </div>
-            <!-- /page content -->
-            <!-- footer content -->
             <footer>
                 <div class="pull-right">
-                    Template original: Gentelella
+                    <a href="https://github.com/marpriori">Github/Marpriori</a>
                 </div>
                 <div class="clearfix"></div>
             </footer>
-            <!-- /footer content -->
-
         </div>
     </div>
     @Scripts.Render("~/bundles/jquery")

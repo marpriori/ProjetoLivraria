@@ -29,7 +29,9 @@
                     <td>
                         <table class="tile_info">
                             @{
-                                var coresList = new[] { "blue", "green", "purple", "aero", "red", "Orange" };
+                                var coresList = new[] {
+                                    "#3498DB", "#9B59B6", "#1ABB9C",
+                                    "#9CC2CB", "#E74C3C", "#34495E" };
                                 var coresEnum = coresList.GetEnumerator();
 
                                 var quantidade = Model.QuantidadeLivro - Model.PrincipaisAutores.Sum(r => r.Value);
@@ -52,7 +54,7 @@
                             {
                                 <tr>
                                     <td>
-                                        <p><i class="fa fa-square @autor.cor"></i>@autor.nome </p>
+                                        <p><i class="fa fa-square" style="color:@autor.cor"></i>@autor.nome </p>
                                     </td>
                                     <td>@Convert.ToString(autor.percentual)%</td>
                                 </tr>

@@ -42,8 +42,7 @@ namespace ProjetoLivraria.MVC.Controllers
         // GET: Livros/Create
         public ActionResult Create()
         {
-            ViewBag.AutorId = new SelectList(_autorService.GetAll(), "AutorId", "Nome");
-            ViewBag.EditoraId = new SelectList(_editoraService.GetAll(), "EditoraId", "Nome");
+            BindForeignKey(null);
             return View();
         }
 
@@ -54,8 +53,7 @@ namespace ProjetoLivraria.MVC.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.AutorId = new SelectList(_autorService.GetAll(), "AutorId", "Nome", livro.AutorId);
-                ViewBag.EditoraId = new SelectList(_editoraService.GetAll(), "EditoraId", "Nome", livro.EditoraId);
+                BindForeignKey(livro);
                 return View(livro);
             }
 
@@ -71,8 +69,7 @@ namespace ProjetoLivraria.MVC.Controllers
             var livro = _livroService.GetById(id);
             var livroViewModel = Mapper.Map<Livro, LivroViewModel>(livro);
 
-            ViewBag.AutorId = new SelectList(_autorService.GetAll(), "AutorId", "Nome", livro.AutorId);
-            ViewBag.EditoraId = new SelectList(_editoraService.GetAll(), "EditoraId", "Nome", livro.EditoraId);
+            BindForeignKey(livroViewModel);
 
             return View(livroViewModel);
         }
@@ -84,8 +81,7 @@ namespace ProjetoLivraria.MVC.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.AutorId = new SelectList(_autorService.GetAll(), "AutorId", "Nome", livro.AutorId);
-                ViewBag.EditoraId = new SelectList(_editoraService.GetAll(), "EditoraId", "Nome", livro.EditoraId);
+                BindForeignKey(livro);
 
                 return View(livro);
             }
@@ -112,6 +108,14 @@ namespace ProjetoLivraria.MVC.Controllers
             var livro = _livroService.GetById(id);
             _livroService.Remove(livro);
             return RedirectToAction("Index");
+        }
+
+        private void BindForeignKey(LivroViewModel livro)
+        {
+            var livroValido = livro ?? new LivroViewModel();
+            ViewBag.AutorId = new SelectList(_autorService.GetAll().OrderBy(a => a.Nome), "AutorId", "Nome", livroValido.AutorId);
+            ViewBag.EditoraId = new SelectList(_editoraService.GetAll().OrderBy(e => e.Nome), "EditoraId", "Nome", livroValido.EditoraId);
+
         }
     }
 }

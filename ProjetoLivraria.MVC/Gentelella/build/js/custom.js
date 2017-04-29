@@ -117,8 +117,9 @@ $MENU_TOGGLE.on('click', function() {
 });
 
 	// check active menu
-	$SIDEBAR_MENU.find('a[href="' + CURRENT_URL + '"]').parent('li').addClass('current-page');
-
+    $SIDEBAR_MENU.find('a[href="' + CURRENT_URL + '"]').parent('li').addClass('current-page');
+    $SIDEBAR_MENU.find('a[href="' + CURRENT_URL.substring(0, str.lastIndexOf("/")) + '"]').parent('li').addClass('current-page');
+	
 	$SIDEBAR_MENU.find('a').filter(function () {
 		return this.href == CURRENT_URL;
 	}).parent('li').addClass('current-page').parents('ul').slideDown(function() {

@@ -4,6 +4,7 @@ using ProjetoLivraria.Business.Interfaces.Services;
 using ProjetoLivraria.MVC.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -91,7 +92,17 @@ namespace ProjetoLivraria.MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             var autor = _autorService.GetById(id);
-            _autorService.Remove(autor);
+            try
+            {
+                _autorService.Remove(autor);
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 547)
+                    ViewBag.Error = "Não foi possível excluir o registro, ele possui vinculo com outra tabela.";
+                var autorViewModel = Mapper.Map<Autor, AutorViewModel>(autor);
+                return View(autorViewModel);
+            }
             return RedirectToAction("Index");
         }
     }

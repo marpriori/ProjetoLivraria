@@ -9,8 +9,13 @@
     <div class="x_content">
         <h4>Você tem certeza que deseja excluir o registro?</h4>
         <br />
+        @if (!string.IsNullOrEmpty(ViewBag.Error))
+        {
+            <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                @ViewBag.Error
+            </div>}
         <div class="form-horizontal form-label-left">
-           
+
             <div class="form-group">
                 <dl class="dl-horizontal">
                     <dt>

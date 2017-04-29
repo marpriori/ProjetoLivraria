@@ -1,0 +1,63 @@
+﻿@model ProjetoLivraria.MVC.ViewModels.LivroViewModel
+@using ProjetoLivraria.MVC.Gentelella.Helpers
+@{
+    ViewBag.Title = "Livro - Detalhes";
+}
+
+@using (Html.CreatePainel("Livro", "detalhes"))
+{
+    <div class="x_content">
+        <br />
+        <div class="form-horizontal form-label-left">
+
+            <div class="form-group">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Titulo)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Titulo)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Autor)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Autor.Nome)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Ano)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Ano)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Editora)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Editora.Nome)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DataCadastro)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DataCadastro)
+                    </dd>
+                </dl>
+            </div>
+            <div class="ln_solid"></div>
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                    <a class="btn btn-default" href="@Url.Action("Index")">Voltar</a>
+                    <a class="btn btn-warning" href="@Url.Action("Edit", new { id = Model.LivroId })">Editar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,66 @@
+﻿@model ProjetoLivraria.MVC.ViewModels.LivroViewModel
+@using ProjetoLivraria.MVC.Gentelella.Helpers
+@{
+    ViewBag.Title = "Livros - Excluir";
+}
+
+@using (Html.CreatePainel("Livro", "excluir"))
+{
+    <div class="x_content">
+        <h4>Você tem certeza que deseja excluir o registro?</h4>
+        <br />
+        <div class="form-horizontal form-label-left">
+
+            <div class="form-group">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Titulo)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Titulo)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Autor)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Autor.Nome)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Ano)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Ano)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Editora)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Editora.Nome)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DataCadastro)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DataCadastro)
+                    </dd>
+                </dl>
+            </div>
+            <div class="ln_solid"></div>
+            @using (Html.BeginForm(new { @class = "form-group" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                    <a class="btn btn-default" href="@Url.Action("Index")">Voltar</a>
+                    <input type="submit" class="btn btn-danger" value="Excluir" />
+                </div>
+            }
+        </div>
+    </div>
+}

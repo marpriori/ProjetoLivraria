@@ -19,14 +19,14 @@ namespace ProjetoLivraria.MVC.Controllers
             _editoraService = editoraService;
         }
 
-        // GET: Editoraes
+        // GET: Editoras
         public ActionResult Index()
         {
             var editoraViewModel = Mapper.Map<IEnumerable<Editora>, IEnumerable<EditoraViewModel>>(_editoraService.GetAll());
             return View(editoraViewModel);
         }
 
-        // GET: Editoraes/Details/5
+        // GET: Editoras/Details/5
         public ActionResult Details(int id)
         {
             var editora = _editoraService.GetById(id);
@@ -35,13 +35,13 @@ namespace ProjetoLivraria.MVC.Controllers
             return View(editoraViewModel);
         }
 
-        // GET: Editoraes/Create
+        // GET: Editoras/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Editoraes/Create
+        // POST: Editoras/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(EditoraViewModel editora)
@@ -54,7 +54,7 @@ namespace ProjetoLivraria.MVC.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: Editoraes/Edit/5
+        // GET: Editoras/Edit/5
         public ActionResult Edit(int id)
         {
             var editora = _editoraService.GetById(id);
@@ -63,7 +63,7 @@ namespace ProjetoLivraria.MVC.Controllers
             return View(editoraViewModel);
         }
 
-        // POST: Editoraes/Edit/5
+        // POST: Editoras/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(EditoraViewModel editora)
@@ -76,7 +76,7 @@ namespace ProjetoLivraria.MVC.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: Editoraes/Delete/5
+        // GET: Editoras/Delete/5
         public ActionResult Delete(int id)
         {
             var editora = _editoraService.GetById(id);
@@ -85,7 +85,7 @@ namespace ProjetoLivraria.MVC.Controllers
             return View(editoraViewModel);
         }
 
-        // POST: Editoraes/Delete/5
+        // POST: Editoras/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

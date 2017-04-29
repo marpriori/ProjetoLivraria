@@ -16,6 +16,7 @@ namespace ProjetoLivraria.MVC.ViewModels
         public string Titulo { get; set; }
 
         public int AutorId { get; set; }
+        [DisplayName("Autor")]
         public virtual AutorViewModel Autor { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Ano")]
@@ -23,6 +24,7 @@ namespace ProjetoLivraria.MVC.ViewModels
         public int Ano { get; set; }
 
         public int EditoraId { get; set; }
+        [DisplayName("Editora")]
         public virtual EditoraViewModel Editora { get; set; }
 
         [ScaffoldColumn(false)]

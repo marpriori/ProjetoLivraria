@@ -152,6 +152,7 @@
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
     <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
     <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
+    <Compile Include="Controllers\LivrosController.cs" />
     <Compile Include="Controllers\EditorasController.cs" />
     <Compile Include="Controllers\AutoresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -247,6 +248,11 @@
     <Content Include="Views\Editoras\Details.cshtml" />
     <Content Include="Views\Editoras\Edit.cshtml" />
     <Content Include="Views\Editoras\Index.cshtml" />
+    <Content Include="Views\Livros\Index.cshtml" />
+    <Content Include="Views\Livros\Create.cshtml" />
+    <Content Include="Views\Livros\Edit.cshtml" />
+    <Content Include="Views\Livros\Details.cshtml" />
+    <Content Include="Views\Livros\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

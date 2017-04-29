@@ -96,10 +96,11 @@ namespace ProjetoLivraria.MVC.Controllers
             {
                 _autorService.Remove(autor);
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
-                if (ex.Number == 547)
+                if (((SqlException)ex.InnerException.InnerException).Number == 547)
                     ViewBag.Error = "Não foi possível excluir o registro, ele possui vinculo com outra tabela.";
+
                 var autorViewModel = Mapper.Map<Autor, AutorViewModel>(autor);
                 return View(autorViewModel);
             }

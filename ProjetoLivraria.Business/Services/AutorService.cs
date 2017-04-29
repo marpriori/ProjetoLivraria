@@ -1,4 +1,6 @@
-﻿using ProjetoLivraria.Business.Entities;
+﻿using System;
+using System.Collections.Generic;
+using ProjetoLivraria.Business.Entities;
 using ProjetoLivraria.Business.Interfaces.Repository;
 using ProjetoLivraria.Business.Interfaces.Services;
 
@@ -11,6 +13,11 @@ namespace ProjetoLivraria.Business.Services
             base(autorRepository)
         {
             _autorRepository = autorRepository;
+        }
+
+        public IDictionary<Autor, int> ListarPrincipais()
+        {
+            return _autorRepository.ListarPrincipais();
         }
     }
 }

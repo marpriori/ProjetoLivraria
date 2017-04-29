@@ -156,12 +156,14 @@
     <Compile Include="Controllers\EditorasController.cs" />
     <Compile Include="Controllers\AutoresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Gentelella\Helpers\DataHoraExtensions.cs" />
     <Compile Include="Gentelella\Helpers\PainelExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AutorViewModel.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\LivroViewModel.cs" />
     <Compile Include="ViewModels\EditoraViewModel.cs" />
   </ItemGroup>
@@ -253,6 +255,7 @@
     <Content Include="Views\Livros\Edit.cshtml" />
     <Content Include="Views\Livros\Details.cshtml" />
     <Content Include="Views\Livros\Delete.cshtml" />
+    <Content Include="Views\Home\IndexPrincipaisAutoresPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

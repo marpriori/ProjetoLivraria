@@ -1,0 +1,85 @@
+﻿@model HomeViewModel
+@using ProjetoLivraria.MVC.ViewModels
+
+<div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="x_panel tile fixed_height_320 overflow_hidden">
+        <div class="x_title">
+            <h2>Principais autores</h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <table class="" style="width:100%">
+                <tr>
+                    <th style="width:37%;">
+                        <p>Top 5</p>
+                    </th>
+                    <th>
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                            <p class="">Autor</p>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                            <p class="text-right">Percentual</p>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <canvas id="melhoresAutores" height="140" width="140" style="margin: 15px 10px 10px 0"></canvas>
+                    </td>
+                    <td>
+                        <table class="tile_info">
+                            @{
+                                var coresList = new[] { "blue", "green", "purple", "aero", "red", "Orange" };
+                                var coresEnum = coresList.GetEnumerator();
+
+                                var quantidade = Model.QuantidadeLivro - Model.PrincipaisAutores.Sum(r => r.Value);
+
+                                if (quantidade > 0)
+                                {
+                                    var autorOutros = new AutorViewModel() { Nome = "Outros" };
+                                    Model.PrincipaisAutores.Add(autorOutros, quantidade);
+                                }
+                                var listaAutores = Model.PrincipaisAutores.Select(item =>
+                                                                            new
+                                                                            {
+                                                                                nome = item.Key.Nome,
+                                                                                quantidade = item.Value,
+                                                                                cor = coresEnum.MoveNext() ? coresEnum.Current : string.Empty,
+                                                                                percentual = Math.Round((decimal)(item.Value * 100 / Model.QuantidadeLivro), 0)
+                                                                            }).ToList();
+                            }
+                            @foreach (var autor in listaAutores)
+                            {
+                                <tr>
+                                    <td>
+                                        <p><i class="fa fa-square @autor.cor"></i>@autor.nome </p>
+                                    </td>
+                                    <td>@Convert.ToString(autor.percentual)%</td>
+                                </tr>
+                            }
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+
+    var DadosPrincipaisAutores = {
+        type: 'doughnut',
+        tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+        data: {
+            labels: @Html.Raw(Json.Encode(listaAutores.Select(r=>r.nome.Split(' ')[0]).ToArray())),
+            datasets: [{
+                data:  @Html.Raw(Json.Encode(listaAutores.Select(r => r.percentual).ToArray())),
+                backgroundColor: @Html.Raw(Json.Encode(listaAutores.Select(r => r.cor).ToArray())),
+                hoverBackgroundColor: @Html.Raw(Json.Encode(listaAutores.Select(r => r.cor).ToArray()))
+                }]
+        },
+        options: {
+            legend: false,
+            responsive: false
+        }
+    };
+</script>

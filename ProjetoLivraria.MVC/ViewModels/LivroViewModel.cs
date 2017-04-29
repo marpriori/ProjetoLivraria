@@ -11,8 +11,8 @@ namespace ProjetoLivraria.MVC.ViewModels
 
         [DisplayName("Título")]
         [Required(ErrorMessage = "Preencha o campo Título")]
-        [MaxLength(250, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo de {0} caracteres")]
+        [MaxLength(250, ErrorMessage = "{0} com no máximo {1} caracteres")]
+        [MinLength(2, ErrorMessage = "{0} com no mínimo {1} caracteres")]
         public string Titulo { get; set; }
 
         public int AutorId { get; set; }
@@ -20,7 +20,7 @@ namespace ProjetoLivraria.MVC.ViewModels
         public virtual AutorViewModel Autor { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Ano")]
-        [Range(typeof(int), "1000", "9999999")]
+        [Range(typeof(int),"1000", "9999",ErrorMessage = "{0} deve ser entre {1} e {2}")]
         public int Ano { get; set; }
 
         public int EditoraId { get; set; }

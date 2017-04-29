@@ -1,10 +1,10 @@
-﻿@model ProjetoLivraria.MVC.ViewModels.AutorViewModel
+﻿@model ProjetoLivraria.MVC.ViewModels.EditoraViewModel
 @using ProjetoLivraria.MVC.Gentelella.Helpers
 @{
-    ViewBag.Title = "Autor - Detalhes";
+    ViewBag.Title = "Editoras - Detalhes";
 }
 
-@using (Html.CreatePainel("Autor", "detalhes"))
+@using (Html.CreatePainel("Editora", "detalhes"))
 {
     <div class="x_content">
         <br />
@@ -30,7 +30,7 @@
             <div class="form-group">
                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                     <a class="btn btn-default" href="@Url.Action("Index")">Voltar</a>
-                    <a class="btn btn-warning" href="@Url.Action("Edit", new { id = Model.AutorId })">Editar</a>
+                    <a class="btn btn-warning" href="@Url.Action("Edit", new { id = Model.EditoraId })">Editar</a>
                 </div>
             </div>
         </div>

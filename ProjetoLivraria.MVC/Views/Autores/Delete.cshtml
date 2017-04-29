@@ -1,32 +1,41 @@
 ﻿@model ProjetoLivraria.MVC.ViewModels.AutorViewModel
-
+@using ProjetoLivraria.MVC.Gentelella.Helpers
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Autores - Excluir";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>AutorViewModel</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+@using (Html.CreatePainel("Autor", "excluir"))
+{
+    <div class="x_content">
+        <h4>Você tem certeza que deseja excluir o registro?</h4>
+        <br />
+        <div class="form-horizontal form-label-left">
+           
+            <div class="form-group">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Nome)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DataCadastro)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DataCadastro)
+                    </dd>
+                </dl>
+            </div>
+            <div class="ln_solid"></div>
+            @using (Html.BeginForm(new { @class = "form-group" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                    <a class="btn btn-default" href="@Url.Action("Index")">Voltar</a>
+                    <input type="submit" class="btn btn-danger" value="Excluir" />
+                </div>
+            }
         </div>
-    }
-</div>
+    </div>
+}

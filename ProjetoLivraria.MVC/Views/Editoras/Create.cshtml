@@ -1,19 +1,19 @@
-﻿@model ProjetoLivraria.MVC.ViewModels.AutorViewModel
+﻿@model ProjetoLivraria.MVC.ViewModels.EditoraViewModel
 @using ProjetoLivraria.MVC.Gentelella.Helpers
 @{
-    ViewBag.Title = "Autores - Editar";
+    ViewBag.Title = "Editoras - Incluir";
 }
 
-@using (Html.CreatePainel("Autor", "editar"))
+@using (Html.CreatePainel("Editora", "Inclusão"))
 {
     using (Html.BeginForm(new { @class = "x_content" }))
     {
         @Html.AntiForgeryToken()
         <br />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.AutorId)
 
         <div class="form-horizontal form-label-left">
+
             <div class="form-group">
                 @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                 <div class="col-md-6 col-sm-6 col-xs-12">

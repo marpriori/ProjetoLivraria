@@ -1,40 +1,36 @@
 ﻿@model ProjetoLivraria.MVC.ViewModels.AutorViewModel
-
+@using ProjetoLivraria.MVC.Gentelella.Helpers
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Autores - Incluir";
 }
 
-<h2>Create</h2>
-
-
-@using (Html.BeginForm()) 
+@using (Html.CreatePainel("Autor", "Inclusão"))
 {
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>AutorViewModel</h4>
-        <hr />
+    using (Html.BeginForm(new { @class = "x_content" }))
+    {
+        @Html.AntiForgeryToken()
+        <br />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+        <div class="form-horizontal form-label-left">
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                    @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="ln_solid"></div>
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                    <a class="btn btn-default" href="@Url.Action("Index")">Voltar</a>
+                    <input type="submit" class="btn btn-success" value="Salvar" />
+                </div>
             </div>
         </div>
-    </div>
+    }
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

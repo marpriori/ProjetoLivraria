@@ -26,6 +26,7 @@ namespace ProjetoLivraria.MVC.ViewModels
         public virtual EditoraViewModel Editora { get; set; }
 
         [ScaffoldColumn(false)]
+        [DisplayName("Data Cadastro")]
         public DateTime DataCadastro { get; set; }
     }
 }

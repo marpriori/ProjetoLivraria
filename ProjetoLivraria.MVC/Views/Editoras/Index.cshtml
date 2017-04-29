@@ -1,14 +1,14 @@
-﻿@model IEnumerable<ProjetoLivraria.MVC.ViewModels.AutorViewModel>
+﻿@model IEnumerable<ProjetoLivraria.MVC.ViewModels.EditoraViewModel>
 @using ProjetoLivraria.MVC.Gentelella.Helpers
 @{
-    ViewBag.Title = "Autores - Lista";
+    ViewBag.Title = "Editoras - Lista";
 }
 
 @using (Html.CreatePainelWithoutTitle())
 {
     <div class="x_title">
         <h2>
-            Autores
+            Editoras
             <a class="btn btn-primary btn-xs" href="@Url.Action("Create")">
                 <i class="fa fa-plus"></i> Incluir
             </a>
@@ -33,9 +33,9 @@
                             @Html.DisplayFor(modelItem => item.Nome)
                         </td>
                         <td>
-                            <a class="btn btn-xs btn-default" href="@Url.Action("Details", new { id = item.AutorId })"><i class="fa fa-eye"></i> Ver</a>
-                            <a class="btn btn-xs btn-warning" href="@Url.Action("Edit", new { id = item.AutorId })"><i class="fa fa-edit"></i> Editar</a>
-                            <a class="btn btn-xs btn-danger" href="@Url.Action("Delete", new { id = item.AutorId })"><i class="fa fa-trash"></i> Excluir</a>
+                            <a class="btn btn-xs btn-default" href="@Url.Action("Details", new { id = item.EditoraId })"><i class="fa fa-eye"></i> Ver</a>
+                            <a class="btn btn-xs btn-warning" href="@Url.Action("Edit", new { id = item.EditoraId })"><i class="fa fa-edit"></i> Editar</a>
+                            <a class="btn btn-xs btn-danger" href="@Url.Action("Delete", new { id = item.EditoraId })"><i class="fa fa-trash"></i> Excluir</a>
                         </td>
                     </tr>
                 }

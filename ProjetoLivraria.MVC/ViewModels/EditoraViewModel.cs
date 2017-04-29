@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProjetoLivraria.MVC.ViewModels
@@ -14,6 +15,7 @@ namespace ProjetoLivraria.MVC.ViewModels
         public string Nome { get; set; }
 
         [ScaffoldColumn(false)]
+        [DisplayName("Data Cadastro")]
         public DateTime DataCadastro { get; set; }
     }
 }

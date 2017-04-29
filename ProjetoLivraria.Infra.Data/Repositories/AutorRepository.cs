@@ -12,7 +12,7 @@ namespace ProjetoLivraria.Infra.Data.Repositories
             var lista = from autor in Db.Autores
                                  join livro in Db.Livros on autor.AutorId equals livro.AutorId
                                  group autor by autor into aut
-                                 orderby aut.Count()
+                                 orderby aut.Count() descending
                                  select new { autor = aut.Key, quantidade = aut.Count() };
             return lista.Take(5).ToDictionary(r=> r.autor,c=> c.quantidade);
         }

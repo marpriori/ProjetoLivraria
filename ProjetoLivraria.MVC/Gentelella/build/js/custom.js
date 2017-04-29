@@ -118,7 +118,12 @@ function init_sidebar() {
     $SIDEBAR_MENU.find('a[href="' + CURRENT_URL + '"]').parent('li').addClass('current-page');
 
     $SIDEBAR_MENU.find('a').filter(function () {
-        return this.href == CURRENT_URL;
+        return this.href == CURRENT_URL
+                                .replace('/Create', '')
+                                .replace('/Delete', '')
+                                .replace('/Details', '')
+                                .replace('/Edit', '')
+                                .replace('/Index', '');
     }).parent('li').addClass('current-page').parents('ul').slideDown(function () {
         setContentHeight();
     }).parent().addClass('active');
